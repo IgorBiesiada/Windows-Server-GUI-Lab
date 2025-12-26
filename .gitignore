@@ -1,0 +1,16 @@
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+.vscode/
+*.code-workspace
+*.vdi
+*.vbox
+*.vbox-prev
+*.log
+*.log
+*.tmp
+_Transcripts/
+*.bak
+*~
