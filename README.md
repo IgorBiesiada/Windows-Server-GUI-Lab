@@ -46,3 +46,12 @@ This phase involved installing the Active Directory binaries and promoting the s
 * **Verification:** The successful deployment is confirmed by the domain-integrated login screen, showing the transition to the **CORPDOMAIN** security authority.
 
 ![Domain Promotion & Verification](screenshots/03_corp_domain.png)
+
+### Phase 3: Administrative Hierarchy & Privilege Management
+To maintain a secure and organized environment, a dedicated administrative structure was implemented, moving away from the default built-in administrator account.
+
+* **Organizational Unit (OU) Design:** Created a top-level OU named `_ADMINS` to store highly privileged accounts, ensuring they are easily identifiable and manageable for Group Policy application.
+* **Account Provisioning:** Created a personalized administrative user within the `_ADMINS` directory.
+* **Privilege Escalation:** Assigned the user to the **Domain Admins** security group, granting the necessary permissions to manage the entire forest.
+
+![Administrative Setup and Group Membership](screenshots/04_new_admin.png)
