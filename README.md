@@ -86,3 +86,31 @@ After securing administrative accounts, a standard organizational structure was 
 * **Identity Standardization:** Configured standard login formats and basic user attributes to verify directory consistency.
 
 ![Standard User and OU Setup](screenshots/07_new_folder_and_user.png)
+
+### Phase 7: Client Domain Integration & Verification
+This phase demonstrates the practical application of the infrastructure by joining a workstation to the domain and verifying the user authentication process.
+
+* **Domain Join:** Connected a Windows 10/11 workstation to the internal network. The client successfully received an IP address via DHCP and resolved the `corpdomain.local` forest via the DC's DNS.
+* **Authentication Test:** Performed a login using the standard user account created in Phase 6 (`Jan Kowalski`). 
+* **Integration Proof:** Verified the workstation's status in **Active Directory Users and Computers**, confirming that the computer object was automatically provisioned in the "Computers" container (or a dedicated Workstations OU).
+* **Connectivity:** Confirmed that the client has internet access through the RAS/NAT gateway configured on the Domain Controller.
+
+![Client Domain Join Verification](screenshots/08_ping_from_user.png)
+
+## 🏁 Project Conclusion & Key Takeaways
+The **Windows Server GUI Infrastructure Lab** is now fully operational and verified. This project successfully demonstrates the ability to deploy a complete corporate network environment from scratch using graphical management tools.
+
+### ✅ Infrastructure Status:
+* **Directory Services:** `corpdomain.local` forest is healthy and managing objects.
+* **Network Services:** DHCP is actively leasing addresses, and RAS/NAT provides secure internet routing for internal clients.
+* **Security:** Administrative and standard user roles are strictly segregated into dedicated Organizational Units (`_ADMINS` vs `_USERS`).
+* **Client Connectivity:** Verified successful domain join and network communication (ICMP/DNS) from a Windows 10 Pro workstation.
+
+### 🛠 Skills Demonstrated:
+* **Systems Administration:** Full lifecycle of Windows Server 2022 deployment.
+* **Network Engineering:** Configuration of IPv4 scopes, gateways, and NAT protocols.
+* **Identity Management:** Implementing Active Directory structures and user provisioning.
+* **Troubleshooting:** Utilizing CLI tools (ping, ipconfig, nslookup) to verify multi-layered infrastructure health.
+
+---
+*This lab, combined with my "Windows Server Core Automation Lab," showcases a comprehensive understanding of both traditional GUI-based management and modern PowerShell-driven automation in enterprise environments.*
