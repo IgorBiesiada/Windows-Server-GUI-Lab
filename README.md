@@ -77,3 +77,12 @@ To automate network addressing for domain clients, the DHCP role was deployed an
 * **Activation:** Activated the scope to begin leasing addresses to workstations in the isolated network.
 
 ![DHCP Scope and Options](screenshots/06_dhcp.png)
+
+### Phase 6: Corporate User Hierarchy
+After securing administrative accounts, a standard organizational structure was established for regular corporate employees.
+
+* **Standard Users OU:** Created a dedicated Organizational Unit named `_USERS`. This separation allows for different Group Policy Objects (GPOs) to be applied to regular employees versus administrators.
+* **Test User Provisioning:** Created a sample corporate user account (e.g., `Dorota Zawartka`) to simulate a real-world employee onboarding process.
+* **Identity Standardization:** Configured standard login formats and basic user attributes to verify directory consistency.
+
+![Standard User and OU Setup](screenshots/07_new_folder_and_user.png)
