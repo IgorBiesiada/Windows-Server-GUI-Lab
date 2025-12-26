@@ -65,3 +65,15 @@ To provide internet access to the isolated internal network without exposing it 
 * **Functionality:** This setup allows internal domain clients to reach external resources (updates, web) while maintaining a secure, private network boundary.
 
 ![RAS/NAT Configuration](screenshots/05_nat_ras.png)
+
+### Phase 5: Dynamic Host Configuration Protocol (DHCP) Implementation
+To automate network addressing for domain clients, the DHCP role was deployed and integrated with Active Directory.
+
+* **Role Deployment:** Installed the **DHCP Server** role and completed the post-installation configuration by **authorizing** the server in AD DS.
+* **Scope Configuration:** Created a new IPv4 Scope (e.g., `CORP_Internal`) with a defined range of distributable IP addresses.
+* **Scope Options:** Configured critical network parameters for clients:
+    * **003 Router:** Set to the LAN IP of the DC (providing NAT gateway access).
+    * **006 DNS Servers:** Set to the DC's IP to ensure domain name resolution.
+* **Activation:** Activated the scope to begin leasing addresses to workstations in the isolated network.
+
+![DHCP Scope and Options](screenshots/06_dhcp.png)
