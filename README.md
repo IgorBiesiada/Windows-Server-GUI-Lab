@@ -55,3 +55,13 @@ To maintain a secure and organized environment, a dedicated administrative struc
 * **Privilege Escalation:** Assigned the user to the **Domain Admins** security group, granting the necessary permissions to manage the entire forest.
 
 ![Administrative Setup and Group Membership](screenshots/04_new_admin.png)
+
+### Phase 4: Network Routing & Connectivity (RAS/NAT)
+To provide internet access to the isolated internal network without exposing it directly to the external environment, the server was configured as a NAT gateway.
+
+* **Role Installation:** Added the **Remote Access** role via Server Manager, specifically enabling the **Routing** role service.
+* **Routing and Remote Access (RRAS):** Configured the RRAS console to enable **Network Address Translation (NAT)**.
+* **Interface Mapping:** Identified the external-facing adapter (WAN) to act as the gateway and the internal adapter (LAN) to receive translated traffic.
+* **Functionality:** This setup allows internal domain clients to reach external resources (updates, web) while maintaining a secure, private network boundary.
+
+![RAS/NAT Configuration](screenshots/05_nat_ras.png)
